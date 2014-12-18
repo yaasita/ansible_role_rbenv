@@ -1,0 +1,2 @@
+- name: Adds .gemrc
+  copy: src=gemrc dest=~{{ rbenv_user }}/.gemrc owner={{ rbenv_user }} group={{ rbenv_user }} mode=0750
