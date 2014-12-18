@@ -5,6 +5,7 @@
     - automake
     - bison
     - build-essential
+    - git
     - imagemagick
     - imagemagick-dbg
     - libapr1-dev
