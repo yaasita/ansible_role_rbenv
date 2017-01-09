@@ -3,9 +3,8 @@
 
 # rbenv setup
 - include: rbenv-setup.yml
-  sudo_user: "{{ rbenv_user }}"
+  become_user: "{{ rbenv.user }}"
 
-## Common ruby environment tasks (e.g. adding a .gemrc, ...)
+# Common ruby environment tasks (e.g. adding a .gemrc, ...)
 - include: common-post.yml
-  sudo: yes
-  sudo_user: "{{ rbenv_user }}"
+  become_user: "{{ rbenv.user }}"

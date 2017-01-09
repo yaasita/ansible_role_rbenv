@@ -1,4 +1,4 @@
-- name: 必要パッケージのインストール
+- name: 必要パッケージのインストール(Ubuntu)
   apt: pkg={{ item }} state=installed
   with_items:
     - autoconf
@@ -22,4 +22,34 @@
     - openssl
     - zlib1g
     - zlib1g-dev
+  when: ansible_distribution == "Ubuntu"
 
+- name: 必要パッケージのインストール(RedHat)
+  yum: name="{{ item }}"
+  with_items:
+    - "@Development tools"
+    - ImageMagick
+    - ImageMagick-devel
+    - bison
+    - gcc
+    - gdbm-devel
+    - git
+    - htop
+    - libffi-devel
+    - libxml2-devel
+    - libxslt
+    - libxslt-devel
+    - libyaml-devel
+    - openssl
+    - openssl-devel
+    - readline
+    - readline-devel
+    - sqlite
+    - sqlite-devel
+    - tk-devel
+    - unzip
+    - wget
+    - zip
+    - zlib
+    - zlib-devel
+  when: ansible_distribution == "RedHat" or ansible_distribution == "CentOS"

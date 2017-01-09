@@ -1,6 +1,7 @@
 ---
 
 # rbenv
-rbenv_user: yamasita
-rbenv_install_ruby_version: 2.1.2
-rbenv_default_ruby_version: 2.1.2
+rbenv:
+  user: hoge
+  install_ruby_version: 2.3.1
+  default_ruby_version: 2.3.1
