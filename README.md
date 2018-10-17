@@ -1,3 +1,2 @@
-# 対応
-- Centos RedHat
-- ubuntu
+
+ubuntu18.04

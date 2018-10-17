@@ -1,6 +1,6 @@
 
 - name: rbenvをgit clone
-  git: repo=https://github.com/sstephenson/rbenv.git dest=~{{ rbenv.user }}/.rbenv accept_hostkey=yes
+  git: repo=https://github.com/rbenv/rbenv.git dest=~{{ rbenv.user }}/.rbenv accept_hostkey=yes
 
 - name: bash_profile配置
   copy: src=bash_profile dest=~{{ rbenv.user }}/.bash_profile mode=755 owner={{ rbenv.user }}
@@ -9,7 +9,7 @@
   file: path=~{{ rbenv.user }}/.rbenv/plugins/ owner={{ rbenv.user }} group={{ rbenv.user }} mode=0755 state=directory
 
 - name: ruby-buildインストール
-  git: repo=https://github.com/sstephenson/ruby-build.git dest=~{{ rbenv.user }}/.rbenv/plugins/ruby-build
+  git: repo=https://github.com/rbenv/ruby-build.git dest=~{{ rbenv.user }}/.rbenv/plugins/ruby-build
 
 - name: rbenvにインストールされてるバージョンチェック
   shell: cd; bash -lc "rbenv versions | grep -q {{ rbenv.install_ruby_version }}"
@@ -28,8 +28,3 @@
 
 - name: Bundlerインストール
   shell: cd; bash -lc "gem install bundler"
-
-
-
-
-

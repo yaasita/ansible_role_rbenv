@@ -1,19 +1,16 @@
-- name: 必要パッケージのインストール(Ubuntu)
-  apt: pkg={{ item }} state=installed
+- name: 必要パッケージのインストール
+  apt: name={{ item }}
   with_items:
     - autoconf
     - automake
     - bison
     - build-essential
-    - git
     - imagemagick
-    - imagemagick-dbg
     - libapr1-dev
     - libcurl4-openssl-dev
+    - libffi-dev
     - libmagick++-dev
     - libreadline-dev
-    - libreadline6
-    - libreadline6-dev
     - libsqlite3-dev
     - libssl-dev
     - libxml2-dev
@@ -22,34 +19,3 @@
     - openssl
     - zlib1g
     - zlib1g-dev
-  when: ansible_distribution == "Ubuntu"
-
-- name: 必要パッケージのインストール(RedHat)
-  yum: name="{{ item }}"
-  with_items:
-    - "@Development tools"
-    - ImageMagick
-    - ImageMagick-devel
-    - bison
-    - gcc
-    - gdbm-devel
-    - git
-    - htop
-    - libffi-devel
-    - libxml2-devel
-    - libxslt
-    - libxslt-devel
-    - libyaml-devel
-    - openssl
-    - openssl-devel
-    - readline
-    - readline-devel
-    - sqlite
-    - sqlite-devel
-    - tk-devel
-    - unzip
-    - wget
-    - zip
-    - zlib
-    - zlib-devel
-  when: ansible_distribution == "RedHat" or ansible_distribution == "CentOS"

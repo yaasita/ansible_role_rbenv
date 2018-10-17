@@ -3,5 +3,5 @@
 # rbenv
 rbenv:
   user: hoge
-  install_ruby_version: 2.3.1
-  default_ruby_version: 2.3.1
+  install_ruby_version: 2.5.1
+  default_ruby_version: 2.5.1
